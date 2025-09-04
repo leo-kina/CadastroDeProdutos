@@ -1,4 +1,7 @@
 package com.example.demo.core.service;
 
-public class IdentificadorGenerator {
+import java.util.UUID;
+
+public interface IdentificadorGenerator {
+    UUID gerarUUID();
 }
