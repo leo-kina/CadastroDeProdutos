@@ -1,13 +1,18 @@
 package com.example.demo.core.entities;
 
-import java.math.BigDecimal;
+import com.example.demo.core.enums.Category;
 
-public record Produtos(
+import java.math.BigDecimal;
+import java.util.UUID;
+
+public record Products(
         Long id,
         String name,
         String description,
+        UUID identifier,
         BigDecimal price,
-        String category,
+        Category category,
         Integer stock
 ) {
+
 }
