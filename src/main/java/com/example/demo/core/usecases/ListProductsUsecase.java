@@ -1,4 +1,9 @@
 package com.example.demo.core.usecases;
 
-public interface ListProducts {
+import com.example.demo.core.entities.Products;
+
+import java.util.List;
+
+public interface ListProductsUsecase {
+    List<Products> execute();
 }
