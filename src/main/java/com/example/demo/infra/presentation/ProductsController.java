@@ -6,6 +6,7 @@ import com.example.demo.infra.dtos.ProductsDTO;
 import com.example.demo.infra.mapper.ProductDtoMapper;
 import com.example.demo.infra.persistence.ProductsEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -22,4 +23,5 @@ public class ProductsController {
     public List<ProductsDTO> listarprodutos(){
         return listProductsUsecase.execute().stream().map(productsDTO::toDto).toList();
     }
+
 }

@@ -21,7 +21,9 @@ public class ProductsRepositoryGateway implements ProductsGateway {
 
     @Override
     public Products criarProduto(Products products) {
-        return null;
+        ProductsEntity entity = productsEntityMapper.toEntity(products);
+        ProductsEntity novoevento = productsRepository.save(entity);
+        return productsEntityMapper.toDomain(novoevento);
     }
 
     @Override
