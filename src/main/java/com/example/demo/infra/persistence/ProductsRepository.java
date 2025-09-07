@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface ProductsRepository extends JpaRepository<ProductsEntity, Long > {
-    Optional<Products> findByIdentificador(UUID identificador);
+// ProductsRepository.java
+public interface ProductsRepository extends JpaRepository<ProductsEntity, Long> {
+    // The correct method name must match the field name in ProductsEntity
+    Optional<ProductsEntity> findByIdentifier(UUID identifier);
 }
