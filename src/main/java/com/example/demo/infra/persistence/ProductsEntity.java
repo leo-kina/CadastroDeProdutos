@@ -20,10 +20,16 @@ public class ProductsEntity {
     private Long id;
     private String name;
     private String description;
-    @Column(unique = true)
+    @Column(unique = true, updatable = false, nullable = false)
     private UUID identifier;
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private Category category;
     private Integer stock;
+    @PrePersist
+    public void generateUUID() {
+        if (this.identifier == null) {
+            this.identifier = UUID.randomUUID();
+        }
+    }
 }
